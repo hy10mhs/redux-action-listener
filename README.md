@@ -30,7 +30,7 @@ import withAction from './withAction';
 class Sample extends Component {
   componentDidMount() {
     this.props.addActionListeners({
-      'ACTION TYPE': this.handler.bind(this),
+      'ACTION TYPE': this.handler, // You must bind this handler to this instance (ex: this.handler.bind(this) in constructor)
     });
   }
   
