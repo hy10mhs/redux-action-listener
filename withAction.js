@@ -11,7 +11,7 @@ const listener = (() => {
 
   const addListener = (type, fn) => {
     if (_listeners[type]) {
-      _listeners[type] = _listeners[type].filter(f => f != fn).push(fn);
+      _listeners[type] = [..._listeners[type].filter(f => f != fn), fn];
     } else {
       _listeners[type] = [fn];
     }
